@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#first {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 50%
+}
+
+button {
+  padding: 10px;
+  width: 50%;
+}
