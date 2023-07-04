@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+curl https://www.hackercoop.dev/api/boop \
+  --header "Authorization: Bearer HackerSummer2023" \
+  --header "Content-Type: application/json" \
+  --data '{"content": "Hello world!"}'
+
+HackerSummer2023
