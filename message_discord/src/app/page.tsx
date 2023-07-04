@@ -9,7 +9,7 @@ export default function Home() {
     setMessage('');
   }, []);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     if (message.length < 1){
       alert("Please provide a valid message")
@@ -19,7 +19,7 @@ export default function Home() {
       callApi(message)
     }
   };
-  function callApi(mymessage){
+  function callApi(mymessage: string){
     const apiUrl = 'https://www.hackercoop.dev/api/boop';
     const accessToken = 'HackerSummer2023';
     const requestData = {
@@ -47,7 +47,7 @@ export default function Home() {
     });
 };
 
-  const handleChange = (event) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setMessage(event.target.value);
   };
 
