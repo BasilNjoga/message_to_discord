@@ -12,18 +12,20 @@ export default function Home() {
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     if (message.length < 1){
-      alert("Please provide a valid message")
+      alert("Please enter a message")
     }
     else{
       alert(`Message sent successfully`);
       callApi(message)
+      setMessage(''); // Clear the message field
     }
   };
   function callApi(mymessage: string){
+    // Call the discord api setting message values
     const apiUrl = 'https://www.hackercoop.dev/api/boop';
     const accessToken = 'HackerSummer2023';
     const requestData = {
-    content: 'Message here: ' + mymessage
+    content: 'Message from basilnjoga: ' + mymessage
     };
 
     const headers = {
@@ -48,6 +50,7 @@ export default function Home() {
 };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    //updates message field when new message is placed
     setMessage(event.target.value);
   };
 
@@ -63,8 +66,8 @@ export default function Home() {
             type="text"
             id="messageField"
             name="message"
-            className="border border-slate-300 bg-transparent"
-            value={message}
+            className="border border-slate-300 bg-transparent text-slate-500"
+            placeholder ="Enter a message..."
             onChange={handleChange}
           />
         </div>
